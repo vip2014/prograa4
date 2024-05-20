@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\DocenteController;
+use App\Http\Controllers\MaestroController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -37,4 +38,23 @@ Route::get('/docentes/buscar/{codigo}', [DocenteController::class, 'findDocente'
 Route::post('/docentes/save', [DocenteController::class, 'saveDocente']);
 Route::put('/docentes/update/{codigo}', [DocenteController::class, 'updateDocente']);
 Route::delete('/docentes/delete/{codigo}', [DocenteController::class, 'deleteDocente']);
+
+
+// Listar todos los maestros
+// Listar todos los maestros
+Route::get('/maestros', [MaestroController::class, 'listMaestros']);
+
+// Buscar un maestro por código
+Route::get('/maestros/buscar/{codigo}', [MaestroController::class, 'findMaestro']);
+
+// Almacenar un nuevo maestro
+Route::post('/maestros/save', [MaestroController::class, 'saveMaestro']);
+
+// Actualizar un maestro por código
+Route::put('/maestros/update/{codigo}', [MaestroController::class, 'updateMaestro']);
+
+// Eliminar un maestro por código
+Route::delete('/maestros/delete/{codigo}', [MaestroController::class, 'deleteMaestro']);
+
+
 
