@@ -8,10 +8,7 @@ use Exception;
 
 class MaestroController extends Controller
 {
-    /**
-     * Lista de todos los maestros
-     * Tipo: GET
-     */
+   
     public function listMaestros()
     {
         $maestros = Maestro::all();

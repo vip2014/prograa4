@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\DocenteController;
 use App\Http\Controllers\MaestroController;
+use App\Http\Controllers\MateraController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -55,6 +56,14 @@ Route::put('/maestros/update/{codigo}', [MaestroController::class, 'updateMaestr
 
 // Eliminar un maestro por código
 Route::delete('/maestros/delete/{codigo}', [MaestroController::class, 'deleteMaestro']);
+
+
+Route::get('/materas', [MateraController::class, 'index']);
+Route::get('/materas/{codigo}', [MateraController::class, 'show']);
+Route::post('/materas', [MateraController::class, 'store']);
+Route::put('/materas/{codigo}', [MateraController::class, 'update']);
+Route::delete('/materas/{codigo}', [MateraController::class, 'destroy']);
+
 
 
 
